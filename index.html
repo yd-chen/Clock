@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时钟</title>
+	<style type="text/css">
+		html,body{
+			margin: 0px;
+			height: 100%;
+		}
+		.bg{
+			height: 100%;
+			background-color: grey;
+			padding-top: 1px;
+			box-sizing: border-box;
+		}
+		.clock{
+			width: 300px;
+			height: 300px;
+			background-color: grey;
+			border: 10px solid #333;
+			margin:0px auto;
+			margin-top: 100px;
+			border-radius: 50%;
+			position: relative;
+			transform: rotate(90deg);
+		}
+		.mark{
+			position: absolute;
+			width: 280px;
+			height: 6px;
+			border-left: 10px solid #ffffff;
+			border-right: 10px solid #ffffff;
+			top: calc(50% - 3px);
+			/*background-color: #ffffff;*/
+		}
+		.mark:first-child{
+			height: 12px;
+			top: calc(50% - 6px);
+
+		}
+		.mark:nth-child(2){
+			transform: rotate(30deg);
+		}
+		.mark:nth-child(3){
+			transform: rotate(60deg);
+		}
+		.mark:nth-child(4){
+			transform: rotate(90deg);
+			height: 12px;
+			top: calc(50% - 6px);
+		}
+		.mark:nth-child(5){
+			transform: rotate(120deg);
+		}
+		.mark:nth-child(6){
+			transform: rotate(150deg);
+		}
+		.dot{
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			background-color: #333333;
+			border-radius: 50%;
+			left: calc(50% - 10px);
+			top: calc(50% - 10px);
+			z-index: 4;
+		}
+		.second{
+			position: absolute;
+			width: 160px;
+			height: 2px;
+			background-color: #ffffff;
+			left: 20px;
+			top: calc(50% - 1px);
+			animation: round1 60s steps(60) infinite;
+			transform-origin: 130px 1px;
+			z-index: 3;
+		}
+		@keyframes round1{
+			from{
+				transform: rotate(0deg);
+			}
+			to{
+				transform: rotate(360deg);				
+			}
+		}
+		.minute{
+			position: absolute;
+			width: 132px;
+			height: 5px;
+			background-color: lightgrey;
+			left: 42px;
+			top: calc(50% - 3px);
+			animation: round2 3600s steps(360) infinite;
+			transform-origin: 108px 2px;
+			z-index: 2;
+		}
+		@keyframes round2{
+			from{
+				transform: rotate(0deg);
+			}
+			to{
+				transform: rotate(360deg);				
+			}
+		}
+		.hour{
+			position: absolute;
+			width: 100px;
+			height: 8px;
+			background-color: lightgrey;
+			left: 70px;
+			top: calc(50% - 4px);
+			animation: round3 43200s steps(43200) infinite;
+			transform-origin: 80px 3px;
+			z-index: 1;
+		}
+		@keyframes round3{
+			from{
+				transform: rotate(0deg);
+			}
+			to{
+				transform: rotate(360deg);				
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="bg">
+		<div class="clock">
+			<div class="mark"></div>
+			<div class="mark"></div>
+			<div class="mark"></div>
+			<div class="mark"></div>
+			<div class="mark"></div>
+			<div class="mark"></div>
+			<div class="mark"></div>
+			<div class="dot"></div>
+			<div class="second"></div>
+			<div class="minute"></div>
+			<div class="hour"></div>
+		</div>
+	</div>
+</body>
+</html>
